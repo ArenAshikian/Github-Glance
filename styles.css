@@ -1,0 +1,90 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 300px;
+    margin: 20px auto;
+    background: radial-gradient(#6441a5,#6441a5,#6441a5,#6441a5, #543787, #442d6b, #342450, #251a36, #17111e, #000000);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: calc(100% - 70px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: #cdbce1;
+    border-radius: 4px;
+    font-size: larger;
+}
+
+button {
+    width: 70px;
+    padding: 10px;
+    background-color: #bd93f9;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    display: none; /* Hide all repositories by default */
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+#dropdownButton {
+    width: 70px;
+    padding: 10px;
+    background-color: #bd93f9;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#dropdownButton:hover {
+    background-color: #0056b3; /* Change background color to blue on hover */
+}
+
+
+#repoList.show li {
+    display: block; /* Show repositories when 'show' class is applied */
+    background-color: #cdbce1;
+}
+
+
+#profilePicture{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    outline: 8px solid #ffffff1c;
+}
+
+.total-repositories {
+    color: white; /* Set the color to white */
+}
