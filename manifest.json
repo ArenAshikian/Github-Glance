@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "GitHub Repository Counter",
+    "version": "1.0",
+    "description": "Displays GitHub repository count and profile picture of a user.",
+    "permissions": ["activeTab", "storage"],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        
+        "48": "icons/icon48.png"
+        
+      }
+    },
+    "icons": {
+
+      "48": "icons/icon48.png"
+      
+    }
+  }
+  
