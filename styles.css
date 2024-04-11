@@ -17,17 +17,18 @@ body {
 }
 
 input[type="text"] {
-    width: calc(100% - 70px);
+    width: calc(100% - 100px);
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     background-color: #cdbce1;
     border-radius: 4px;
-    font-size: larger;
+    font-size: large;
 }
 
 button {
     width: 70px;
+    margin-bottom: 10px;
     padding: 10px;
     background-color: #bd93f9;
     border: none;

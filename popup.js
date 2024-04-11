@@ -1,17 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
     var button = document.getElementById('searchButton');
-    button.addEventListener('click', function() {
-        var username = document.getElementById('username').value;
+    var usernameInput = document.getElementById('username');
+
+    var searchFunction = function() {
+        var username = usernameInput.value;
         if (username.trim() === '') {
             collapseRepoList();
             removeProfileLinkButton(); // Remove the profile link button if username is empty
             var profilePicture = document.getElementById('profilePicture');
-            profilePicture.src = 'github.png'; // Use GitHub logo as alternate image
+            profilePicture.src = '25231.png'; // Use GitHub logo as alternate image
             
         } else {
             getRepositories(username);
             getProfilePicture(username); // Fetch profile picture when search button is clicked
             createProfileLinkButton(username); // Create the profile link button
+        }
+    };
+
+    button.addEventListener('click', searchFunction);
+
+    // Event listener for the Enter key in the username input field
+    usernameInput.addEventListener('keyup', function(e) {
+        if (e.keyCode === 13) { // 13 is the key code for Enter
+            searchFunction();
         }
     });
 
@@ -103,7 +114,7 @@ function getProfilePicture(username) {
     if (username.trim() === '') {
         console.log("Username is empty, setting default profile picture.");
         var profilePicture = document.getElementById('profilePicture');
-        profilePicture.src = 'github.png'; // Use GitHub logo as alternate image
+        profilePicture.src = '25231.png'; // Use GitHub logo as alternate image
         return; // Exit function early
     }
     var xhr = new XMLHttpRequest();
@@ -114,12 +125,12 @@ function getProfilePicture(username) {
                 console.log("User found, setting profile picture.");
                 var userData = JSON.parse(xhr.responseText);
                 var profilePicture = document.getElementById('profilePicture');
-                profilePicture.src = userData.avatar_url || 'github.png'; // Use user's avatar or GitHub logo as alternate image
+                profilePicture.src = userData.avatar_url || '25231.png'; // Use user's avatar or GitHub logo as alternate image
             } else {
                 console.log("User not found, setting default profile picture.");
                 // Request failed or user not found, set alternate image
                 var profilePicture = document.getElementById('profilePicture');
-                profilePicture.src = 'github.png'; // Use GitHub logo as alternate image
+                profilePicture.src = '25231.png'; // Use GitHub logo as alternate image
             }
         }
     };
