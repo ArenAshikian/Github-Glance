@@ -7,6 +7,24 @@ body {
     padding: 0;
 }
 
+.loading-animation {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    border: 10px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #cdbce1;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+}
+
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 .container {
     width: 300px;
     margin: 20px auto;
@@ -14,6 +32,12 @@ body {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+    color: red;
+    font-size: small;
+    margin-top: 5px;
 }
 
 input[type="text"] {
