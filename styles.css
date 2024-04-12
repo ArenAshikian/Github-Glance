@@ -8,7 +8,8 @@ body {
 }
 
 .loading-animation {
-    display: flex; /* Use flexbox */
+
+    display: none; /* Use flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     margin: auto;

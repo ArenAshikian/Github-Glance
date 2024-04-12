@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
     var button = document.getElementById('searchButton');
     var usernameInput = document.getElementById('username');
     var errorMessage = document.createElement('p'); // Create element for error message
     errorMessage.classList.add('error-message'); // Add class for styling
 
     var loadingAnimation = document.getElementById('loadingAnimation');
-
+  
     var isValidUsername = function(username) {
         var usernameRegex = /^[a-zA-Z0-9-_]+$/;
         return usernameRegex.test(username);
