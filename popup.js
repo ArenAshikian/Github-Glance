@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var profileLinkButton = document.getElementById('profileLinkButton');
     profileLinkButton.addEventListener('click', function() {
-        var username = document.getElementById('username').value.trim();
+        var username = usernameInput.value.trim();
         if (username !== '' && isValidUsername(username)) {
             var profileUrl = 'https://github.com/' + username;
             window.open(profileUrl, '_blank');
@@ -168,18 +168,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function createProfileLinkButton(username) {
-        var profileLinkButton = document.getElementById('profileLinkButton');
-        if (!profileLinkButton) {
-            profileLinkButton = document.createElement('button');
-            profileLinkButton.textContent = 'View Profile';
-            profileLinkButton.id = 'profileLinkButton';
-            profileLinkButton.addEventListener('click', function() {
+        removeProfileLinkButton(); // Remove existing button
+        var profileLinkButton = document.createElement('button');
+        profileLinkButton.textContent = 'View Profile';
+        profileLinkButton.id = 'profileLinkButton';
+        profileLinkButton.addEventListener('click', function() {
+            var username = usernameInput.value.trim();
+            if (username !== '' && isValidUsername(username)) {
                 var profileUrl = 'https://github.com/' + username;
                 window.open(profileUrl, '_blank');
-            });
-            var container = document.querySelector('.container');
-            container.appendChild(profileLinkButton);
-        }
+            }
+        });
+        var container = document.querySelector('.container');
+        container.appendChild(profileLinkButton);
     }
 
     function removeProfileLinkButton() {
